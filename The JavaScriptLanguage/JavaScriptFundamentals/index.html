@@ -3,9 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
 </head>
 <body>
-    
+    <main>
+        <div class="container">
+            <div class="section">
+                <div class="section-header">
+                    <h1>Nullish coalescing operator '??'</h1>
+                </div>
+                <div class="section-body">
+                    <h2>Nullish '??'</h2>
+                    <code class="code-container">(a ?? b)</code>
+                    <code class="code-container">
+                        result = (a !== null && a !== undefined) ? a : b;
+                    </code>
+                    <p>
+                    In other words, ?? returns the first argument if it’s not null/undefined. Otherwise, the second one.
+                    The nullish coalescing operator isn’t anything completely new. It’s just a nice syntax to get the first “defined” value of the two.
+                    We can rewrite result = a ?? b using the operators that we already know, like this:
+                    </p>
+                    <code class="code-container">
+                        let user;
+                        <br/>
+                        alert(user ?? "Anonymous"); // Anonymous
+                    </code>
+                </div>
+                <div class="section-body">
+                    <h2>Comparison with ||</h2>
+                    <p>
+                    The OR || operator can be used in the same way as ??, as it was described in the previous chapter.
+                    For example, in the code above we could replace ?? with || and still get the same result:
+                    </p>
+                    <code class="code-container">
+                        let firstName = null;
+                        <br>
+                        let lastName = null;
+                        <br>
+                        let nickName = "Supercoder";
+                        <br>
+                        // shows the first truthy value:
+                        alert(firstName || lastName || nickName || "Anonymous"); // Supercoder
+                    </code>
+                    <ul>The important difference between them is that:
+                        <li> || returns the first truthy value.</li>
+                        <li> ?? returns the first defined value.</li>
+                    </ul>
+                    <p>In other words, || doesn’t distinguish between false, 0, an empty string "" and null/undefined.
+                        They are all the same – falsy values. If any of these is the first argument of ||,
+                        then we’ll get the second argument as the result.In practice though, 
+                        we may want to use default value only when the variable is null/undefined.
+                        That is, when the value is really unknown/not set.
+                    </p>
+                </div>
+            </div>
+        </div>
+          
+    </main>
+    <script src="./app.js"></script>
 </body>
 </html>
